@@ -1,0 +1,71 @@
+.app {
+  display: grid;
+  grid-template-rows: 150px auto;
+  min-height: 100vh;
+  transition: all 0.5s ease;
+}
+
+main {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px 8%;
+}
+
+.task_col {
+  width: 33.33%;
+  margin: 20px;
+}
+
+.light {
+  background-color: #fff;
+  color: #000;
+}
+
+.dark {
+  background-color: #000;
+  color: #fff;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 40px;
+}
+
+.theme-toggle button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+}
+
+.app .dark .theme-toggle button {
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  main {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .task_col {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .theme-toggle {
+    top: 20px;
+    right: 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .theme-toggle {
+    top: 5px;
+    right: 5px;
+  }
+  .theme-toggle button {
+    font-size: 12px;
+  }
+}
