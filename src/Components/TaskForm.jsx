@@ -18,6 +18,11 @@ const TaskForm = ({ setTasks }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!taskData.task.trim()) {
+      alert("Please Enter a task ");
+      return;
+    }
     const newTaskData = {
       ...taskData,
       date: formatDate(new Date()),
