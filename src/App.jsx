@@ -64,7 +64,7 @@ const App = () => {
           status="done"
           handleComplete={handleComplete}
           handleDelete={handleDelete}
-          color="limeyellow"
+          color="green"
         />
       </main>
       <div className="theme-toggle">
