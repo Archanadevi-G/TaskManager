@@ -2,12 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import TaskForm from "./Components/TaskForm";
 import TaskColumn from "./Components/TaskColumn";
-import todoIcon from "./assets/todo.png";
-import doingIcon from "./assets/doing.png";
-import doneIcon from "./assets/checkmark.png";
-
 import { MdDarkMode } from "react-icons/md";
 import { MdLightMode } from "react-icons/md";
+import { GoDotFill } from "react-icons/go";
 
 const oldTasks = localStorage.getItem("tasks");
 
@@ -43,28 +40,31 @@ const App = () => {
       <TaskForm setTasks={setTasks} />
       <main className="main">
         <TaskColumn
-          title="To do"
-          icon={todoIcon}
+          title="Open"
+          icon={<GoDotFill />}
           tasks={tasks}
           status="todo"
           handleComplete={handleComplete}
           handleDelete={handleDelete}
+          color="red"
         />
         <TaskColumn
-          title="Doing"
-          icon={doingIcon}
+          title="In Progress"
+          icon={<GoDotFill />}
           tasks={tasks}
           status="doing"
           handleComplete={handleComplete}
           handleDelete={handleDelete}
+          color="blue"
         />
         <TaskColumn
-          title="Done"
-          icon={doneIcon}
+          title="Closed"
+          icon={<GoDotFill />}
           tasks={tasks}
           status="done"
           handleComplete={handleComplete}
           handleDelete={handleDelete}
+          color="limeyellow"
         />
       </main>
       <div className="theme-toggle">

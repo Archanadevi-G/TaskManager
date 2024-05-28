@@ -9,13 +9,15 @@ const TaskColumn = ({
   status,
   handleComplete,
   handleDelete,
+  color,
 }) => {
+  const taskCount = tasks.filter((task) => task.status === status).length;
+
   return (
     <section className="task_col">
       <h2 className="heading">
-        {/* <span className="icon">{icon}</span> */}
-        <img src={icon} alt="icon" className="icon" />
-        {title}
+        {icon && React.cloneElement(icon, { style: { color } })}
+        {title} <p className="count">{taskCount}</p>
       </h2>
       {tasks.map(
         (task, index) =>
